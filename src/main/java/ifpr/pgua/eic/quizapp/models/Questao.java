@@ -41,7 +41,10 @@ public class Questao {
         return Collections.unmodifiableList(todasAlternativas);
     }
 
-    
-
+    @Override
+    public String toString(){
+       
+        return "" + enunciado + "\n" +respostaCorreta + "\n";
+       }
     
 }

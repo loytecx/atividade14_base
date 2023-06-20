@@ -5,9 +5,11 @@ import java.util.ArrayList;
 import ifpr.pgua.eic.quizapp.models.ControladorQuiz;
 import ifpr.pgua.eic.quizapp.models.Questao;
 import ifpr.pgua.eic.quizapp.screens.TelaCadastro;
-import ifpr.pgua.eic.quizapp.screens.TelaPrincipal;
+import ifpr.pgua.eic.quizapp.controllers.TelaGerenciador;
+import ifpr.pgua.eic.quizapp.controllers.TelaPrincipal;
 import ifpr.pgua.eic.quizapp.screens.TelaQuiz;
 import io.github.hugoperlin.navigatorfx.BaseAppNavigator;
+import io.github.hugoperlin.navigatorfx.ScreenRegistryFXML;
 import io.github.hugoperlin.navigatorfx.ScreenRegistryNoFXML;
 
 
@@ -56,6 +58,8 @@ public class App extends BaseAppNavigator{
     /*método para registrar as telas da aplicação*/
     @Override
     public void registrarTelas() {
+        registraTela("PRINCIPAL", new ScreenRegistryFXML(App.class,"principal.fxml",o->new TelaPrincipal()));
+        registraTela("GERENCIADOR", new ScreenRegistryFXML(App.class, "gerenciarquestoes.fxml",o->new TelaGerenciador(controladorQuiz)));
     }
     
 }
